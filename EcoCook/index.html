@@ -28,6 +28,25 @@
 
     <!-- Custom styles for this template -->
     <link href="css/carousel.css" rel="stylesheet">
+
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhJhVpKjTFvH5AKQ_fLweX2jWjFYh6gTU&callback=initMap" async defer></script>
+    <script type="text/javascript">
+      function initMap() {
+      // Create a default location
+      var eurecom = {lat: 43.614386, lng: 7.071124999999938}
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: eurecom,
+        zoom: 8
+      });
+        
+      var marker = new google.maps.Marker({
+        position: eurecom,
+        map: map
+      });
+    }
+    </script>
+
   </head>
 
   <body>
@@ -193,80 +212,43 @@
 
       <hr class="featurette-divider">
 
-      <!-- /END THE FEATURETTES -->
 
+      <section id="mapBloc">
+        <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="row">
+                  <h1 style="text-align: center;">Our Agency</h1>
+                  <br>
+                    <div class="col-sm-6 col-lg-6">
+                        <div id="map" style="width: 500px; height: 400px;  margin: 0 auto; "></div>
+                    </div>
+                    <div class="col-sm-1 col-lg-1"></div>
+                    <div class="col-sm-5 col-lg-5">
+                      <br><br><br>
+                        <h4>Our Adress</h4>
+                        <address>
+                        <strong>Eurecom</strong><br>
+                         Campus SophiaTech <br>
+                         450 Route des Chappes <br>
+                         06410 Biot </address>
+                        <p>
+                          <i class="icon-phone"></i>  +33 4 93 00 00 00 <br>
+                          <i class="icon-envelope-alt"></i> email@domainname.com
+                        </p>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+
+
+
+	   <hr class="featurette-divider">
 
       <!-- FOOTER -->
-	  <section id="mapPost">
 
-<div id="floating-panel">
-      <input id="address" type="textbox" value="Sydney, NSW">
-      <input id="submit" type="button" value="Geolocate">
-    </div>
-<div id="map"> </div>
-<script>
-function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -34.397, lng: 150.644},
-    zoom: 6
-  });
-  var infoWindow = new google.maps.InfoWindow({map: map});
-
-  // Try HTML5 geolocation.
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
-
-      infoWindow.setPosition(pos);
-      infoWindow.setContent('Location found.');
-      map.setCenter(pos);
-    }, function() {
-      handleLocationError(true, infoWindow, map.getCenter());
-    });
-  } else {
-    // Browser doesn't support Geolocation
-    handleLocationError(false, infoWindow, map.getCenter());
-  }
-  
-  var geocoder = new google.maps.Geocoder();
-
-  document.getElementById('submit').addEventListener('click', function() {
-    geocodeAddress(geocoder, map);
-  });
-}
-
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-  infoWindow.setPosition(pos);
-  infoWindow.setContent(browserHasGeolocation ?
-                        'Error: The Geolocation service failed.' :
-                        'Error: Your browser doesn\'t support geolocation.');
-}
-
-function geocodeAddress(geocoder, resultsMap) {
-  var address = document.getElementById('address').value;
-  geocoder.geocode({'address': address}, function(results, status) {
-    if (status === google.maps.GeocoderStatus.OK) {
-      resultsMap.setCenter(results[0].geometry.location);
-      var marker = new google.maps.Marker({
-        map: resultsMap,
-        position: results[0].geometry.location
-      });
-    } else {
-      alert('Geocode was not successful for the following reason: ' + status);
-    }
-  });
-}
-
-
-    </script>
-	        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTU4p_Utiy3Qkyf7umI0O-vQssT3sW7PE&callback=initMap" async defer></script>
-
-	</section>
-	
-	  
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
         <p>&copy; 2016 EURECOM, Estelle RAFFIN & Christelle CABASSE</p>

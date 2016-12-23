@@ -139,3 +139,11 @@ font-family: Georgia, "Times New Roman", Times, serif;
 text-align: center;
 font-family: Georgia, "Times New Roman", Times, serif;
 }
+
+
+#map {
+        margin: 0;
+        padding: 0;
+        height: 500px;
+        width: 800px;
+   }
