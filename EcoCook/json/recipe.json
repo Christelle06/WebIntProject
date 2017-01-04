@@ -1,0 +1,54 @@
+{
+"@context": "http://schema.org",
+"@graph": [
+	{
+	  "@type": "Recipe",
+	  "name": "Sushis",
+	  "cookTime": "PT1H",
+	  "datePublished": "2017-05-01",
+	  "description": "This classic banana bread recipe comes from my mom -- the walnuts add a nice texture and flavor to the banana bread.",
+	  "image": "bananabread.jpg",
+	  "recipeIngredient": [
+	    "3 or 4 ripe bananas, smashed",
+	    "1 egg",
+	    "3/4 cup of sugar"
+	  ],
+	  "prepTime": "PT15M",
+	  "recipeInstructions": "Preheat the oven to 350 degrees. Mix in the ingredients in a bowl. Add the flour last. Pour the mixture into a loaf pan and bake for one hour.",
+	  "recipeYield": "1 loaf"
+	},
+{
+	  "@type": "Recipe",
+	  "name": "Mom's World Famous Banana Bread",
+	  "cookTime": "PT1H",
+	  "datePublished": "2017-05-01",
+	  "description": "This classic banana bread recipe comes from my mom -- the walnuts add a nice texture and flavor to the banana bread.",
+	  "image": "bananabread.jpg",
+	  "recipeIngredient": [
+	    "3 or 4 ripe bananas, smashed",
+	    "1 egg",
+	    "3/4 cup of sugar"
+	  ],
+	  "prepTime": "PT15M",
+	  "recipeInstructions": "Preheat the oven to 350 degrees. Mix in the ingredients in a bowl. Add the flour last. Pour the mixture into a loaf pan and bake for one hour.",
+	  "recipeYield": "1 loaf"
+	},{
+	  "@type": "Recipe",
+	  "name": "Mom's World Famous Banana Bread",
+	  "cookTime": "PT1H",
+	  "datePublished": "2017-05-01",
+	  "description": "This classic banana bread recipe comes from my mom -- the walnuts add a nice texture and flavor to the banana bread.",
+	  "image": "bananabread.jpg",
+	  "recipeIngredient": [
+	    "3 or 4 ripe bananas, smashed",
+	    "1 egg",
+	    "3/4 cup of sugar"
+	  ],
+	  "prepTime": "PT15M",
+	  "recipeInstructions": "Preheat the oven to 350 degrees. Mix in the ingredients in a bowl. Add the flour last. Pour the mixture into a loaf pan and bake for one hour.",
+	  "recipeYield": "1 loaf"
+	}
+
+
+    ]
+}

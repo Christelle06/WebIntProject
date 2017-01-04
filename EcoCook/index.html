@@ -28,6 +28,25 @@
 
     <!-- Custom styles for this template -->
     <link href="css/carousel.css" rel="stylesheet">
+
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhJhVpKjTFvH5AKQ_fLweX2jWjFYh6gTU&callback=initMap" async defer></script>
+    <script type="text/javascript">
+      function initMap() {
+      // Create a default location
+      var eurecom = {lat: 43.614386, lng: 7.071124999999938}
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: eurecom,
+        zoom: 8
+      });
+        
+      var marker = new google.maps.Marker({
+        position: eurecom,
+        map: map
+      });
+    }
+    </script>
+
   </head>
 
   <body>
@@ -133,13 +152,13 @@
           <p><a class="btn btn-default" href="add.html" role="button">Add Recipe &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="images/search.png" alt="Generic placeholder image" width="140" height="140">
+          <img class="imgNorm" src="images/search.png" alt="Generic placeholder image" width="140" height="140">
           <h2>Search for a recipe</h2>
           <p> Do you have some leftovers but no ideas what to do with them ? Use our searching algorithm to find the perfect recipe so you can avoid waist and have and amazing meal !</p>
           <p><a class="btn btn-default" href="find.html" role="button">Find Recipe &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="images/calendar.png" alt="Generic placeholder image" width="140" height="140">
+          <img class="imgNorm" src="images/calendar.png" alt="Generic placeholder image" width="140" height="140">
           <h2>Recipe of the month</h2>
           <p>Need some inspiration ? Find out our recipe of the month, it is our crush and we hope you will love it as much as we do.</p>
           <p><a class="btn btn-default" href="recipe.html" role="button">View Recipie &raquo;</a></p>
@@ -193,10 +212,43 @@
 
       <hr class="featurette-divider">
 
-      <!-- /END THE FEATURETTES -->
 
+      <section id="mapBloc">
+        <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="row">
+                  <h1 style="text-align: center;">Our Agency</h1>
+                  <br><br>
+                    <div class="col-sm-6 col-lg-6">
+                        <div id="map" style="width: 400px; height: 300px;  margin: 0 auto; "></div>
+                    </div>
+                    <div class="col-sm-1 col-lg-1"></div>
+                    <div class="col-sm-5 col-lg-5">
+                      <br><br><br>
+                        <h4>Our Adress</h4>
+                        <address>
+                        <strong>Eurecom</strong><br>
+                         Campus SophiaTech <br>
+                         450 Route des Chappes <br>
+                         06410 Biot </address>
+                        <p>
+                          <i class="icon-phone"></i>  +33 4 93 00 00 00 <br>
+                          <i class="icon-envelope-alt"></i> email@domainname.com
+                        </p>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+
+
+
+	   <hr class="featurette-divider">
 
       <!-- FOOTER -->
+
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
         <p>&copy; 2016 EURECOM, Estelle RAFFIN & Christelle CABASSE</p>
