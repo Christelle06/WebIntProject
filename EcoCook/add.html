@@ -93,12 +93,12 @@
 				<fieldset>
 						<legend><span class="number">1</span> Your recipe</legend>
 						<br />
-						<input type="text" name="field1" placeholder="Name of your recipe*">		
-						<textarea name="field2" placeholder="Ingredients of your recipe*"></textarea>				
-						<textarea name="field3" placeholder="Description of the Recipe*"></textarea>
+						<input type="text" name="field1" id="title" placeholder="Name of your recipe*">		
+						<textarea name="field2" id="ingredient" placeholder="Ingredients of your recipe*"></textarea>				
+						<textarea name="field3" id="description" placeholder="Description of the Recipe*"></textarea>
 
 						<label for="job">Difficulty*:</label>
-						<select id="job" name="field4">
+						<select id="difficulty" name="field4">
 							<option value="easy">Easy</option>
 			 				<option value="medium">Medium</option>
 			  				<option value="difficult">Difficult</option>
@@ -114,9 +114,24 @@
 				<input type="email" name="field6" placeholder="Your Email*">
 				<textarea name="field7" placeholder="Comments"></textarea>
 				</fieldset>
-				
-				<input type="submit" value="Apply" />
+				   <a href="javascript:check()" id="submit">Submit</a>
+				<!--<input type="submit" value="Apply" onClick='"javascript:check()"' />-->
 				</form>
+            <script type="text/javascript">
+ 
+       function check() {
+              var title = document.getElementById('title').value;
+              var ingredient = document.getElementById('title').value; 
+              var description = document.getElementById('description').value; 
+              var difficulty = document.getElementById('difficulty').value;
+          if (document.getElementById('title').value == "" || document.getElementById('email').value == "" || document.getElementById('ingredient').value == "") {
+              alert("Fill All Fields !");
+          } else {
+              document.getElementById('form').submit();
+              alert("Form Submitted Successfully...");
+        }
+      };
+          </script>
 			</div>
 
         </div><!-- /.col-lg-12 -->
@@ -140,5 +155,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>        window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+ 
+    $(document).ready(function() {
+      function check_empty() {
+          if (document.getElementById('title').value == "" || document.getElementById('email').value == "" || document.getElementById('ingredient').value == "") {
+              alert("Fill All Fields !");
+          } else {
+              document.getElementById('form').submit();
+              alert("Form Submitted Successfully...");
+        }
+    }
+  });
+
+ 
+
+    </script>
   </body>
 </html>
