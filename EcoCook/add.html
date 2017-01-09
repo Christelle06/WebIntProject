@@ -124,8 +124,8 @@
               var ingredient = document.getElementById('title').value; 
               var description = document.getElementById('description').value; 
               var difficulty = document.getElementById('difficulty').value;
-          if (document.getElementById('title').value == "" || document.getElementById('email').value == "" || document.getElementById('ingredient').value == "") {
-              alert("Fill All Fields !");
+          if (title == "" || ingredient == "" || description == "" || difficulty == "" ) {
+              alert("You have to fill the fields with the *");
           } else {
               document.getElementById('form').submit();
               alert("Form Submitted Successfully...");
