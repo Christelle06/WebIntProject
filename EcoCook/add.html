@@ -50,7 +50,7 @@
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                       <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="#">Home</a></li>
+                        <li class="active"><a href="index.html">Home</a></li>
                         <li><a href="find.html">Find Recipe</a></li>
                         <li><a href="add.html">Add Recipe</a></li>
                         <li><a href="recipe.html">Recipe of the Month</a></li>
@@ -94,14 +94,14 @@
 						<legend><span class="number">1</span> Your recipe</legend>
 						<br />
 						<input type="text" name="field1" id="title" placeholder="Name of your recipe*">		
-						<textarea name="field2" id="ingredient" placeholder="Ingredients of your recipe*"></textarea>				
-						<textarea name="field3" id="description" placeholder="Description of the Recipe*"></textarea>
+						<textarea  id="ingredient" placeholder="Ingredients of your recipe*"></textarea>				
+						<textarea  id="description" placeholder="Description of the Recipe*"></textarea>
 
 						<label for="job">Difficulty*:</label>
 						<select id="difficulty" name="field4">
-							<option value="easy">Easy</option>
-			 				<option value="medium">Medium</option>
-			  				<option value="difficult">Difficult</option>
+							<option value="Easy">Easy</option>
+			 				<option value="Medium">Medium</option>
+			  				<option value="Difficult">Difficult</option>
 						</select>      
 				</fieldset>
 		
@@ -109,29 +109,40 @@
 				<legend><span class="number">2</span> Additional Info</legend>
 				<br />
 				<label for="file">Download a picture*:</label>
-				<input id="file "type="file" name="field5">
+				<input id="file" type="file" id="imgInp">
 				<br />
-				<input type="email" name="field6" placeholder="Your Email*">
-				<textarea name="field7" placeholder="Comments"></textarea>
+				<input type="email" name="field6" placeholder="Your Email*" id = "email" value = "Your Email">
+				<textarea placeholder="Comments" id="comments" value = "Comments on the recipe" ></textarea>
 				</fieldset>
-				   <a href="javascript:check()" id="submit">Submit</a>
-				<!--<input type="submit" value="Apply" onClick='"javascript:check()"' />-->
+				   <a href="javascript:check()" id="myBtn">Submit</a>
 				</form>
-            <script type="text/javascript">
- 
-       function check() {
-              var title = document.getElementById('title').value;
-              var ingredient = document.getElementById('title').value; 
-              var description = document.getElementById('description').value; 
-              var difficulty = document.getElementById('difficulty').value;
-          if (title == "" || ingredient == "" || description == "" || difficulty == "" ) {
-              alert("You have to fill the fields with the *");
-          } else {
-              document.getElementById('form').submit();
-              alert("Form Submitted Successfully...");
-        }
-      };
-          </script>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <div class="modal-header">
+            <br><br>
+              <span class="close">X</span>
+              <h3>Do you confirm the recipe that you want to send ?</h3>
+              <br>
+            </div>
+            <div class="modal-body">
+              <br><br>
+              <ul id="recipe">
+              Loading...
+              </ul>
+              <h4>The picture of your recipe :</h4>
+              <img id="blah" src="#" alt="your image" />
+            </div>
+            <div class="modal-footer">
+              <br>
+                <a href="javascript:submit()" id = "button2">Confirm the Submission</a>
+              <br>
+            </div>
+          </div>
+
+        </div>
+
 			</div>
 
         </div><!-- /.col-lg-12 -->
@@ -156,20 +167,100 @@
     <script>        window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript">
- 
-    $(document).ready(function() {
-      function check_empty() {
-          if (document.getElementById('title').value == "" || document.getElementById('email').value == "" || document.getElementById('ingredient').value == "") {
-              alert("Fill All Fields !");
-          } else {
-              document.getElementById('form').submit();
-              alert("Form Submitted Successfully...");
+
+       function check() {
+              var title = document.getElementById('title').value;
+              var ingredients = document.getElementById('ingredient').value; 
+              var description = document.getElementById('description').value; 
+              var difficulty = document.getElementById('difficulty').value;
+              var email = document.getElementById('email').value;
+              var comments = document.getElementById('comments').value;
+              
+              
+              if (title == "" || ingredient == "" || description == "" || difficulty == "" ) {
+                  alert("You have to fill the fields with the *");
+              } else {
+                  //document.getElementById('form').submit();
+                  //alert("Form Submitted Successfully...");
+                              // Get the modal
+                  var modal = document.getElementById('myModal');
+
+                  // Get the button that opens the modal
+                  var btn = document.getElementById("myBtn");
+
+                  // Get the <span> element that closes the modal
+                  var span = document.getElementsByClassName("close")[0];
+
+                  // When the user clicks on the button, open the modal
+                  btn.onclick = function() {
+                      modal.style.display = "block";
+                      //document.getElementById("title").value = title;
+                      //document.getElementById("ingredient").value = ingredient;
+                      var $ul = $("#recipe");
+                      $ul.empty();
+
+                      var $title = $('<ol class="title">');
+                      var $dif = $('<ol class="difficulty">');
+                      var $des = $('<ol class="description">');
+                      var $in = $('<ol class="ingredients">'); 
+                      var $mail = $('<ol class="email">');
+                      var $com = $('<ol class="comments">');
+
+                      var $name = $('<span>').html("Title : " + title + "<br>" + "<br>");
+                      var $difficulty = $('<span>').html("Difficulty : " + difficulty + "<br>" + "<br>");
+                      var $description = $('<span>').html("Description : " + "<br>" + description + "<br>" + "<br>");
+                      var $ingredients = $('<span>').html("Ingredients : " + "<br>" + ingredients + "<br>" + "<br>");
+                      var $email = $('<span>').html("Your Email : " + "<br>" + email + "<br>" + "<br>");
+                      var $comments = $('<span>').html("Comments : " + "<br>" + comments + "<br>" + "<br>");
+                                               
+                      $title.append($name);    
+                      $dif.append($difficulty);                  
+                      $des.append($description);
+                      $in.append($ingredients);
+                      $mail.append($email);
+                      $com.append($comments);
+                                              
+                      $ul.append($title);
+                      $ul.append($dif);
+                      $ul.append($des);
+                      $ul.append($in);
+                      $ul.append($mail);
+                      $ul.append($com);
+        
+                      
+                  }
+
+                  // When the user clicks on <span> (x), close the modal
+                  span.onclick = function() {
+                      modal.style.display = "none";
+                  }
+
+                  // When the user clicks anywhere outside of the modal, close it
+                  window.onclick = function(event) {
+                      if (event.target == modal) {
+                          modal.style.display = "none";
+                      }
+                  }
+
+              }
+      };
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            
+            reader.onload = function (e) {
+                $('#blah').attr('src', e.target.result);
+            }
+            
+            reader.readAsDataURL(input.files[0]);
         }
     }
-  });
+    
+    $("#imgInp").change(function(){
+        readURL(this);
+    });
 
- 
-
-    </script>
+  </script>
   </body>
 </html>
