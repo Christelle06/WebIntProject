@@ -152,11 +152,13 @@ font-family: Georgia, "Times New Roman", Times, serif;
 
 /**** Drag & Drop **/
 
+/**** Drag & Drop **/
+
 .dropper {
     margin: 50px 10px 10px 50px;
     width: 400px;
     height: 250px;
-    background-color: #555;
+    background-color: #cec1c0;
     border: 1px solid #111;
     
     border-radius: 10px;
@@ -173,11 +175,11 @@ font-family: Georgia, "Times New Roman", Times, serif;
     padding-top: 20px;
     width: 80px;
     height: 60px;
-    color: #3D110F;
-    background-color: #822520;
-    border: 4px solid #3D110F;
+    color: #ac3436;
+    background-color: #f25d60;
+    border: 4px solid #ac3436;
     text-align: center;
-    font-size: 2em;
+    font-size: 1em;
     cursor: move;
 
     transition: all 200ms linear;
