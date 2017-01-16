@@ -1,81 +1,80 @@
 {
-"@context": "http://schema.org",
-"@graph": [
-	{
-	  "@type": "Recipe",
-	  "name": "Sushis",
-	  "cookTime": "PT1H",
-	  "datePublished": "2017-05-01",
-	  "description": "This classic banana bread recipe comes from my mom -- the walnuts add a nice texture and flavor to the banana bread.",
-	  "image": "sushi.jpg",
-	  "recipeIngredient": [
-	    "300g of cooked sushi rice"
-		"300g of fresh salmon"
-		"Wasabi",
-		"Soy sauce"
-	  ],
-	  "prepTime": "PT15M",
-	  "recipeInstructions": "Wet your hands and shape the rice into 10 mounds.Slice the salmon into 10 thin slices. Place the salmon on top of the rice mounds. Serve with wasabi and soy sauce.",
-	  "recipeYield": "1 loaf"
-	},
-{
-	  "@type": "Recipe",
-	  "name": "Bacon Burger",
-	  "cookTime": "PT1H",
-	  "datePublished": "2017-05-01",
-	  "description": "This classic banana bread recipe comes from my mom -- the walnuts add a nice texture and flavor to the banana bread.",
-	  "image": "burger.jpg",
-	  "recipeIngredient": [
-	    "1 chopped steak",
-		"2 bacon slices",
-		"2 cheddar slices",
-		"salad",
-		"ketchup, mustard",
-	     ],
-	  "prepTime": "PT15M",
-	  "recipeInstructions": "Clean the salad, brown the steak. Add the bacon slices in the pan. Heat the bun in the oven for 5 minutes at 180°C. Create your burger with salad, sauces, steak, bacon, and cheddar. Heat it in the oven for 5 minutes at 180°C to melt the cheese.",
-	  "recipeYield": "1 loaf"
-	},{
-	  "@type": "Recipe",
-	  "name": "Chocolate Muffin",
-	  "cookTime": "PT1H",
-	  "datePublished": "2017-05-01",
-	  "description": "Warm the oven at 180°C. Melt the butter with the black chocolate. Add the egg and the milk and mix. Add flour, sugar and yeast. Butter the plates and fill it half. Bake for 15 minutes at 180°C.",
-	  "image": "muffin.jpg",
-	  "recipeIngredient": [
-	    "120g of flour",
-		"60g of sugar"
-		"1 package of yeast",
-		"1 egg and 1 white",
-		"50g of butter",
-		"60g of black chocolate",
-		"100g of chocolate chips",
-		"4 tea spoons of milk"
-	  ],
-	  "prepTime": "PT15M",
-	  "recipeInstructions": "Preheat the oven to 350 degrees. Mix in the ingredients in a bowl. Add the flour last. Pour the mixture into a loaf pan and bake for one hour.",
-	  "recipeYield": "1 loaf"
-	},{
-	  "@type": "Recipe",
-	  "name": "Provencale Vegetable Gratin",
-	  "cookTime": "PT1H",
-	  "datePublished": "2017-05-01",
-	  "description": "Cut your vegetables into thin rings. In a pan, brown the oignons with olive oil. In a plate which goes to the oven, place all the slices of vegetables in the order : eggplant, tomato, zuchhini, oignon. Add olive oil, thyme and garlic. Bake for 40 minutesn at 180°C.",
-	  "image": "bananabread.jpg",
-	  "recipeIngredient": [
-	    "1 eggplant",
-		"4 tomatoes",
-		"2 zucchinis",
-		"2 white oignons",
-		"2 gloves of garlic",
-		"olive oil",
-		"thyme"
-	  ],
-	  "prepTime": "PT15M",
-	  "recipeInstructions": "Preheat the oven to 350 degrees. Mix in the ingredients in a bowl. Add the flour last. Pour the mixture into a loaf pan and bake for one hour.",
-	  "recipeYield": "1 loaf"
-	}
+	"@context": "http://schema.org",
+	"@graph": [{
+			"@type": "Recipe",
+			"name": "Sushis",
+			"cookTime": "PT1H",
+			"datePublished": "2017-05-01",
+			"description": "This classic banana bread recipe comes from my mom -- the walnuts add a nice texture and flavor to the banana bread.",
+			"image": "sushi.jpg",
+			"recipeIngredient": [
+				"300g of cooked sushi rice",
+				"300g of fresh salmon",
+				"Wasabi",
+				"Soy sauce"
+			],
+			"prepTime": "PT15M",
+			"recipeInstructions": "Wet your hands and shape the rice into 10 mounds.Slice the salmon into 10 thin slices. Place the salmon on top of the rice mounds. Serve with wasabi and soy sauce.",
+			"recipeYield": "1 loaf"
+		}, {
+			"@type": "Recipe",
+			"name": "Bacon Burger",
+			"cookTime": "PT1H",
+			"datePublished": "2017-05-01",
+			"description": "This classic banana bread recipe comes from my mom -- the walnuts add a nice texture and flavor to the banana bread.",
+			"image": "burger.jpg",
+			"recipeIngredient": [
+				"1 chopped steak",
+				"2 bacon slices",
+				"2 cheddar slices",
+				"salad",
+				"ketchup",
+				"mustard"
+			],
+			"prepTime": "PT15M",
+			"recipeInstructions": "Clean the salad, brown the steak. Add the bacon slices in the pan. Heat the bun in the oven for 5 minutes at 180Â°C. Create your burger with salad, sauces, steak, bacon, and cheddar. Heat it in the oven for 5 minutes at 180Â°C to melt the cheese.",
+			"recipeYield": "1 loaf"
+		}, {
+			"@type": "Recipe",
+			"name": "Chocolate Muffin",
+			"cookTime": "PT1H",
+			"datePublished": "2017-05-01",
+			"description": "Warm the oven at 180Â°C. Melt the butter with the black chocolate. Add the egg and the milk and mix. Add flour, sugar and yeast. Butter the plates and fill it half. Bake for 15 minutes at 180Â°C.",
+			"image": "muffin.jpg",
+			"recipeIngredient": [
+				"120g of flour",
+				"60g of sugar",
+				"1 package of yeast",
+				"1 egg and 1 white",
+				"50g of butter",
+				"60g of black chocolate",
+				"100g of chocolate chips",
+				"4 tea spoons of milk"
+			],
+			"prepTime": "PT15M",
+			"recipeInstructions": "Preheat the oven to 350 degrees. Mix in the ingredients in a bowl. Add the flour last. Pour the mixture into a loaf pan and bake for one hour.",
+			"recipeYield": "1 loaf"
+		}, {
+			"@type": "Recipe",
+			"name": "Provencale Vegetable Gratin",
+			"cookTime": "PT1H",
+			"datePublished": "2017-05-01",
+			"description": "Cut your vegetables into thin rings. In a pan, brown the oignons with olive oil. In a plate which goes to the oven, place all the slices of vegetables in the order : eggplant, tomato, zuchhini, oignon. Add olive oil, thyme and garlic. Bake for 40 minutesn at 180Â°C.",
+			"image": "bananabread.jpg",
+			"recipeIngredient": [
+				"1 eggplant",
+				"4 tomatoes",
+				"2 zucchinis",
+				"2 white oignons",
+				"2 gloves of garlic",
+				"olive oil",
+				"thyme"
+			],
+			"prepTime": "PT15M",
+			"recipeInstructions": "Preheat the oven to 350 degrees. Mix in the ingredients in a bowl. Add the flour last. Pour the mixture into a loaf pan and bake for one hour.",
+			"recipeYield": "1 loaf"
+		}
 
 
-    ]
+	]
 }

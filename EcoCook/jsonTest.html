@@ -68,8 +68,8 @@
             <div class="row">
               <div class="col-lg-12">
                 <div class="row">
-					<div id="name">
-                  <h1 style="text-align: center;">Bacon Burger</h1></div>
+					
+                  <h1 style="text-align: center;"><div id="name"></div></h1>
                   <br><br>
                     <div class="col-sm-6 col-lg-6">
                         <div id="recipePic">
@@ -103,33 +103,10 @@
             </div>
           </div>
 		  
-		<script>
-
-	var data_file = json.parse('/json/recipe.json');
-	var document.getElementById("name");
-	document.getElementById("name").innerHTML = data_file.name;
 	
-		</script>
       </section>
  <br>
- <section id="video">
-        <div class="container">
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="row">
-                  <h2 style="text-align: center;">Video of the recipe</h2>
-                  <br><br>
-				 
-                   <div style="text-align: center;"><video id="video" width="400" height="222" controls >
-     <source src="http://allrecipes.com/8260a9e7-5429-4ec6-ab86-b5ebb372ac6e" id="videoSrc" type ="video/mime">
-    Video non compatible avec votre navigateur
-</video>            
-					</div>
-				</div>
-              </div>
-            </div>
-          </div>
-      </section>
+
 	  
 	  
  <hr class="featurette-divider">
@@ -148,5 +125,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="js/bootstrap.min.js"></script>
+		<script>
+
+	
+	$.getJSON("json/recipe.json", function(json) {
+	var data = JSON.parse(json);
+	var graph = data["@graph"];
+	document.getElementById("name").innerHTML = data.name;
+    console.log(data); // this will show the info it in firebug console
+	});
+	//('{"name": "Bacon Burger", "recipeIngredient":["1 chopped steak","2 bacon slices","2 cheddar slices","salad","ketchup","mustard"], "recipeInstructions": "Clean the salad, brown the steak. Add the bacon slices in the pan. Heat the bun in the oven for 5 minutes at 180°C. Create your burger with salad, sauces, steak, bacon, and cheddar. Heat it in the oven for 5 minutes at 180°C to melt the cheese."}');
+	
+	
+		</script>
   </body>
 </html>
