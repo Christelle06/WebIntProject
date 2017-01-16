@@ -80,12 +80,8 @@
                       <br>
                         <h4>Ingredients</h4>
                         <div id='ingredients'>
-                        <ul><li>1 bun</li>
-						<li>1 chopped steak</li>
-						<li>2 bacon slices</li>
-						<li>2 cheddar slices</li>
-						<li>salad</li>
-						<li>ketchup, mustard</li>
+                        <ul id="ingredient">
+
 						</ul>
 						</div>
                        <br>
@@ -129,12 +125,26 @@
 
 	
 	$.getJSON("json/recipe.json", function(json) {
-	var data = JSON.parse(json);
-	var graph = data["@graph"];
-	document.getElementById("name").innerHTML = data.name;
-    console.log(data); // this will show the info it in firebug console
+	var graph = json["@graph"];
+	var recipe = graph[1]; // c'est a l'arrache mais bon si on sait quelle est la recette que l'on veut ça fonctionne :)
+	var ingredients = recipe.recipeIngredient;
+
+	document.getElementById("name").innerHTML = recipe.name;
+
+	var $ul = $("#ingredient");
+    $ul.empty();
+    
+
+    for(var r in ingredients){
+      var ingred = ingredients[r];
+      var $li = $('<li>');
+      var $name = $('<span>').text(ingred);
+      $li.append($name);
+      $ul.append($li);
+    }
+
+    console.log(ingredients); // this will show the info it in firebug console
 	});
-	//('{"name": "Bacon Burger", "recipeIngredient":["1 chopped steak","2 bacon slices","2 cheddar slices","salad","ketchup","mustard"], "recipeInstructions": "Clean the salad, brown the steak. Add the bacon slices in the pan. Heat the bun in the oven for 5 minutes at 180°C. Create your burger with salad, sauces, steak, bacon, and cheddar. Heat it in the oven for 5 minutes at 180°C to melt the cheese."}');
 	
 	
 		</script>

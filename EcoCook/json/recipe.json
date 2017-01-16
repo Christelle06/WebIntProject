@@ -1,4 +1,4 @@
-{
+﻿{
 	"@context": "http://schema.org",
 	"@graph": [{
 			"@type": "Recipe",
@@ -24,12 +24,12 @@
 			"description": "This classic banana bread recipe comes from my mom -- the walnuts add a nice texture and flavor to the banana bread.",
 			"image": "burger.jpg",
 			"recipeIngredient": [
-				"1 chopped steak",
-				"2 bacon slices",
-				"2 cheddar slices",
-				"salad",
-				"ketchup",
-				"mustard"
+				"1 Chopped steak",
+				"2 Bacon slices",
+				"2 Cheddar slices",
+				"Salad",
+				"Ketchup",
+				"Mustard"
 			],
 			"prepTime": "PT15M",
 			"recipeInstructions": "Clean the salad, brown the steak. Add the bacon slices in the pan. Heat the bun in the oven for 5 minutes at 180Â°C. Create your burger with salad, sauces, steak, bacon, and cheddar. Heat it in the oven for 5 minutes at 180Â°C to melt the cheese.",
