@@ -87,11 +87,7 @@
                        <br>
 					   <h4>Instructions</h4>
 					   <div id='Instructions'>
-					   <br><p>1) Clean the salad, brown the steak</p>
-					   <p>2) Add the bacon slices in the pan</p>
-					   <p>3) Heat the bun in the oven for 5 minutes at 180°C</p>
-					   <p>4) Create your burger with salad, sauces, steak, bacon, and cheddar.</p>
-					   <p>4) Heat it in the oven for 5 minutes at 180°C to melt the cheese.</p>
+					   <br>
 						</div>
 					</div>
                 </div>
@@ -143,6 +139,8 @@
       $ul.append($li);
     }
 
+	document.getElementById("Instructions").innerHTML = recipe.recipeInstructions;
+	
     console.log(ingredients); // this will show the info it in firebug console
 	});
 	

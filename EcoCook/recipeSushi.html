@@ -67,7 +67,7 @@
         <div class="container">
             <div class="row">
               <div class="col-lg-12">
-                <div class="row"><h1 style="text-align: center;">Sushi</h1>
+                <div class="row"><h1 style="text-align: center;"><div id="name"></div></h1>
                   <br><br>
                     <div class="col-sm-6 col-lg-6">
                         <div id="recipePic">
@@ -77,19 +77,14 @@
                      <div class="col-sm-5 col-lg-5">
                       <br>
                         <h4>Ingredients</h4>
-                        
-                        <ul><li>300g of cooked sushi rice</li>
-						<li>300g of fresh salmon</li>
-						<li>Wasabi</li>
-						<li>Soy sauce</li>
-						
+                        <div id='ingredients'>
+                        <ul id="ingredient">
+
 						</ul>
+						</div>
                        <br>
 					   <h4>Instructions</h4>
-					   <br><p>1)Wet your hands and shape the rice into 10 mounds.</p>
-					   <p>2) Slice the salmon into 10 thin slices.</p>
-					   <p>3) Place the salmon on top of the rice mounds.</p>
-					   <p>4) Serve with wasabi and soy sauce.</p>
+					   <br><div id='Instructions'>
 					  </div>
                 </div>
               </div>
@@ -114,5 +109,34 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="js/bootstrap.min.js"></script>
+		<script>
+
+	
+	$.getJSON("json/recipe.json", function(json) {
+	var graph = json["@graph"];
+	var recipe = graph[0]; // c'est a l'arrache mais bon si on sait quelle est la recette que l'on veut ça fonctionne :)
+	var ingredients = recipe.recipeIngredient;
+
+	document.getElementById("name").innerHTML = recipe.name;
+
+	var $ul = $("#ingredient");
+    $ul.empty();
+    
+
+    for(var r in ingredients){
+      var ingred = ingredients[r];
+      var $li = $('<li>');
+      var $name = $('<span>').text(ingred);
+      $li.append($name);
+      $ul.append($li);
+    }
+
+	document.getElementById("Instructions").innerHTML = recipe.recipeInstructions;
+	
+    console.log(ingredients); // this will show the info it in firebug console
+	});
+	
+	
+		</script>
   </body>
 </html>
