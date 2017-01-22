@@ -7,12 +7,7 @@
 			"datePublished": "2017-05-01",
 			"description": "This classic banana bread recipe comes from my mom -- the walnuts add a nice texture and flavor to the banana bread.",
 			"image": "sushi.jpg",
-			"recipeIngredient": [
-				"300g of cooked sushi rice",
-				"300g of fresh salmon",
-				"Wasabi",
-				"Soy sauce"
-			],
+			"recipeIngredient": ["300g of cooked sushi rice","300g of fresh salmon","Wasabi","Soy sauce"],
 			"prepTime": "PT15M",
 			"recipeInstructions": "Wet your hands and shape the rice into 10 mounds.Slice the salmon into 10 thin slices. Place the salmon on top of the rice mounds. Serve with wasabi and soy sauce.",
 			"recipeYield": "1 loaf"
@@ -23,7 +18,7 @@
 			"datePublished": "2017-05-01",
 			"description": "This classic banana bread recipe comes from my mom -- the walnuts add a nice texture and flavor to the banana bread.",
 			"image": "burger.jpg",
-			"recipeIngredient": [
+			"recipeIngredient":[
 				"1 Chopped steak",
 				"2 Bacon slices",
 				"2 Cheddar slices",
@@ -41,7 +36,7 @@
 			"datePublished": "2017-05-01",
 			"description": "Warm the oven at 180Â°C. Melt the butter with the black chocolate. Add the egg and the milk and mix. Add flour, sugar and yeast. Butter the plates and fill it half. Bake for 15 minutes at 180Â°C.",
 			"image": "muffin.jpg",
-			"recipeIngredient": [
+			"recipeIngredient":[
 				"120g of flour",
 				"60g of sugar",
 				"1 package of yeast",
@@ -61,7 +56,7 @@
 			"datePublished": "2017-05-01",
 			"description": "Cut your vegetables into thin rings. In a pan, brown the oignons with olive oil. In a plate which goes to the oven, place all the slices of vegetables in the order : eggplant, tomato, zuchhini, oignon. Add olive oil, thyme and garlic. Bake for 40 minutesn at 180Â°C.",
 			"image": "bananabread.jpg",
-			"recipeIngredient": [
+			"recipeIngredient":[
 				"1 eggplant",
 				"4 tomatoes",
 				"2 zucchinis",
