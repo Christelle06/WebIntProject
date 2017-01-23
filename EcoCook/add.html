@@ -109,7 +109,7 @@
 				<legend><span class="number">2</span> Additional Info</legend>
 				<br />
 				<label for="file">Download a picture*:</label>
-				<input id="file" type="file" id="imgInp">
+				<input id="file" type="file" id="imgInp" onchange="sessionStorage.imgInp=this.value">
 				<br />
 				<input type="email" name="field6" placeholder="Your Email*" id = "email" value = "Your Email">
 				<textarea placeholder="Comments" id="comments" value = "Comments on the recipe" ></textarea>
@@ -175,6 +175,7 @@
               var difficulty = document.getElementById('difficulty').value;
               var email = document.getElementById('email').value;
               var comments = document.getElementById('comments').value;
+			  var image = document.getElementById('imgInp');
               
               
               if (title == "" || ingredient == "" || description == "" || difficulty == "" ) {
@@ -212,7 +213,8 @@
                       var $ingredients = $('<span>').html("Ingredients : " + "<br>" + ingredients + "<br>" + "<br>");
                       var $email = $('<span>').html("Your Email : " + "<br>" + email + "<br>" + "<br>");
                       var $comments = $('<span>').html("Comments : " + "<br>" + comments + "<br>" + "<br>");
-                                               
+						
+								   
                       $title.append($name);    
                       $dif.append($difficulty);                  
                       $des.append($description);
