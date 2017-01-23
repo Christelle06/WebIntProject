@@ -69,6 +69,81 @@
 			"prepTime": "PT15M",
 			"recipeInstructions": "Put oil in a large skillet over medium-high heat. Add onions and season with salt and pepper. Cook until softened, about 5 minutes. Add thyme, chile flakes, and garlic. Cook 2 minutes more. Heat oven to 400°. Spread the cooked onion mixture in the bottom of a large earthenware baking dish, about 9 by 13 inches. Arrange the zucchini, eggplant, and tomatoes in alternating rows: Start by making a row of overlapping zucchini slices, standing them vertically on edge. Follow with a row of eggplant, then a row of tomatoes in the same manner, packing the rows tightly together. Continue until the baking dish is filled. Sprinkle the surface of the vegetables generously with salt and pepper, and drizzle with olive oil. Bake uncovered for 15 minutes. Reduce heat to 350° and continue baking for 45 minutes to an hour, or until the vegetables are quite tender. Cool dish to room temperature to allow flavors to meld—the tian absolutely tastes best at room temperature. To serve, garnish with torn basil leaves.",
 			"recipeYield": "1 loaf"
+		}, {
+			"@type": "Recipe",
+			"name": "Chocolate chip cookie",
+			"cookTime": "PT1H",
+			"datePublished": "2017-05-01",
+			"description": "Cut your vegetables into thin rings. In a pan, brown the oignons with olive oil. In a plate which goes to the oven, place all the slices of vegetables in the order : eggplant, tomato, zuchhini, oignon. Add olive oil, thyme and garlic. Bake for 40 minutesn at 180Â°C.",
+			"image": "bananabread.jpg",
+			"recipeIngredient":[
+				"85g sugar",
+				"85g butter",
+				"150g chocolqte chips",
+				"baking soda",
+				"1 egg",
+				"150g flour",
+				"vanilla sugar"
+			],
+			"prepTime": "PT15M",
+			"recipeInstructions": "Melt the butter, add sugar and the egg and mix. Add the vanilla sugar and the baking soda and mix. Add slowly the flour and finally add the chocolate chips. On a plate which goes in the oven, make small mounds of dough. Bake for 10min at 180°C in the oven.",
+			"recipeYield": "1 loaf"
+		}, {
+			"@type": "Recipe",
+			"name": "Quesadillas Avocado Bacon",
+			"cookTime": "PT1H",
+			"datePublished": "2017-05-01",
+			"description": "Cut your vegetables into thin rings. In a pan, brown the oignons with olive oil. In a plate which goes to the oven, place all the slices of vegetables in the order : eggplant, tomato, zuchhini, oignon. Add olive oil, thyme and garlic. Bake for 40 minutesn at 180°C.",
+			"image": "bananabread.jpg",
+			"recipeIngredient":[
+				"2 tortillas",
+				"1 avocado",
+				"75g of cream cheese",
+				"8 small tomatoes",
+				"8 bacon slices",
+				"half a lemon"
+			],
+			"prepTime": "PT15M",
+			"recipeInstructions": "Cut the tomatoes in half and the avocado in slices. Add lemon juice to the avocado. Heat a pan to brown the bacon on each side. Put cream cheese on each tortillas and cover half with avocado, tomatoes and bacon. Bend in a half-circle and brown the tortillas in the pan.",
+			"recipeYield": "1 loaf"
+		}, {
+			"@type": "Recipe",
+			"name": "Oignon rings",
+			"cookTime": "PT1H",
+			"datePublished": "2017-05-01",
+			"description": "Cut your vegetables into thin rings. In a pan, brown the oignons with olive oil. In a plate which goes to the oven, place all the slices of vegetables in the order : eggplant, tomato, zuchhini, oignon. Add olive oil, thyme and garlic. Bake for 40 minutesn at 180°C.",
+			"image": "bananabread.jpg",
+			"recipeIngredient":[
+				"1 big oignon",
+				"100g of flour",
+				"1 egg",
+				"10cl of milk",
+				"olive oil",
+				"mayonnaise"
+			],
+			"prepTime": "PT15M",
+			"recipeInstructions": "Cut the oignon and separate the rings. In a bowl, mix the flour, yellow egg, the milk and some olive oil and salt. Add the whisked white egg. Soak the oignon into the dough and make them fried.",
+			"recipeYield": "1 loaf"
+		}, {
+			"@type": "Recipe",
+			"name": "Salmon zucchini lasagna",
+			"cookTime": "PT1H",
+			"datePublished": "2017-05-01",
+			"description": "Cut your vegetables into thin rings. In a pan, brown the oignons with olive oil. In a plate which goes to the oven, place all the slices of vegetables in the order : eggplant, tomato, zuchhini, oignon. Add olive oil, thyme and garlic. Bake for 40 minutesn at 180°C.",
+			"image": "bananabread.jpg",
+			"recipeIngredient":[
+				"3 zucchinis",
+				"400g of salmon",
+				"lasagna",
+				"olive oil",
+				"50g of butter",
+				"50g of flour",
+				"3/4 of L milk",
+				"grated cheese"
+			],
+			"prepTime": "PT15M",
+			"recipeInstructions": "Cut the zucchinis in circles, brown them in a pan with olive oil. Cook the salmon in the same pan. During this time, prepare the bechamel, melt the butter, add the flour while mixing and add slowly the milk. Add salt and peper. In a plate make level lasagna, zucchini and salmon and bechamel. Add grated cheese on the top and bake for 30min at 200°C.",
+			"recipeYield": "1 loaf"
 		}
 
 
