@@ -170,9 +170,41 @@
 
       <br>
       <br>
-      <input type="submit" value="Search My Recipe" style="text-align: center;"/>
+      <input type="submit" value="Search My Recipe" id="submitRecipe" style="text-align: center;"/>
       </form>
       </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row">
+        <div class="col-lg-12">
+        <h3 style="text-align: center;">Recipies that matches to your research : </h3>
+          <div class="row">
+            <h1 style="text-align: center;"><div id="name"></div></h1>
+            <br><br>
+<!--          <div class="col-sm-6 col-lg-6">
+                  <div id="recipePic">
+                  <img class="featurette-image img-responsive center-block" src="images/tian.jpg" alt="Generic placeholder image">
+                  </div>
+              </div>  -->
+              <div class="col-sm-5 col-lg-5">
+                <br>
+                  <h4>Ingredients</h4>
+                  
+                <div id='ingredients'>
+                  <ul id="ingredient">
+
+                  </ul>
+                </div>
+                <br>
+                <h4>Instructions</h4>
+                <br>
+                <div id='Instructions'>
+                </div>
+              </div>
+          </div>
+        </div>
       </div>
 
 
@@ -252,7 +284,62 @@
 
                     var name = dndHandler.draggedElement.id; // Recupere l'id de l'élement dropper
                     ingredients.push(name);
-                    alert(ingredients);
+                    //alert(ingredients);
+
+                    //Listen to the click inside DropEvents
+                    document.getElementById("submitRecipe").addEventListener("click", function(){
+                      alert(ingredients);
+
+                      $.getJSON("json/recipe.json", function(json) {
+                        var graph = json["@graph"];
+                        var recipies = []; //Recipies for the result page mosaique
+
+                        //Parcours de toute les recettes 
+                        for (i = 0; i < graph.length; i++) {
+                            var ingredRecipe = [];
+                            var recipe = graph[i]; 
+                            var check = 0;
+                            var ingredient = recipe.recipeIngredient;
+
+                            for(var r in ingredient){
+                                var ingred = ingredient[r];
+                                ingredRecipe.push(ingred);
+                                
+                                for (j = 0; j < ingredients.length;j++){
+                                  if (ingred.includes(ingredients[j])) 
+                                  {
+                                      check = check + 1;                            
+                                  }
+                                } 
+                            }
+                            if (check >= 2){
+                              //console.log(recipe);
+                              recipies.push(recipe);
+                            }
+                        }
+
+                        document.getElementById("name").innerHTML = recipies[0].name;
+                        var ingredsRecipe = recipies[0].recipeIngredient;
+
+                        var $ul = $("#ingredient");
+                          $ul.empty();
+                          
+
+                          for(var r in ingredsRecipe){
+                            var ingre = ingredsRecipe[r];
+                            var $li = $('<li>');
+                            var $name = $('<span>').text(ingre);
+                            $li.append($name);
+                            $ul.append($li);
+                          }
+
+                        document.getElementById("Instructions").innerHTML = recipies[0].recipeInstructions; 
+
+                       //console.log(recipies[0].name); // this will show the info it in firebug console
+                       });
+
+
+                    });
                 });
             }
         };
@@ -270,24 +357,6 @@
             dndHandler.applyDropEvents(droppers[i]); // Application des événements nécessaires aux zones de drop
         }
 
-        $.getJSON("json/recipe.json", function(json) {
-          var graph = json["@graph"];
-
-          //Parcours de toute les recettes 
-          for (i = 0; i < graph.length; i++) {
-              var recipe = graph[i]; // c'est a l'arrache mais bon si on sait quelle est la recette que l'on veut ça fonctionne :)
-              var ingredient = recipe.recipeIngredient;
-
-          //document.getElementById("name").innerHTML = recipe.name;
-
-              for(var r in ingredients){
-                  var ingred = ingredient[r];
-                 // Controler si ingredient correspond a ceux dans le tableau
-              }
-          }
-
-          console.log(ingredients); // this will show the info it in firebug console
-         });
 
 		})();
 
