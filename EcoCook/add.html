@@ -110,9 +110,12 @@
 				<legend><span class="number">2</span> Additional Info</legend>
 				<br />
 				<label for="file">Download a picture*:</label>
-				<input id="file" type="file" id="imgInp" onchange="sessionStorage.imgInp=this.value">
+				<!--<input type="file" id="imgInp" onchange="previewFile()">  onchange="sessionStorage.imgInp=this.value" -->
 				<br />
-				<input type="email" name="field6" placeholder="Your Email*" id = "email" value = "Your Email">
+        <input type="file" id="getimage" onchange="previewFile()"><br>
+        <img id = "image" src="" height="200" style="text-align: center;" alt="Image preview..."> <br>
+				<br />
+        <input type="email" name="field6" placeholder="Your Email*" id = "email">
 				<textarea placeholder="Comments" id="comments" value = "Comments on the recipe" ></textarea>
 				</fieldset>
 				   <a href="javascript:check()" id="myBtn">Submit</a>
@@ -132,8 +135,10 @@
               <ul id="recipe">
               Loading...
               </ul>
-              <h4>The picture of your recipe :</h4>
-              <img id="blah" src="#" alt="your image" />
+              <h4 class="picture" style=" margin-left: 110px;">The picture of your recipe :</h4><br>
+              <!-- <img id="blah" src="#" alt="your image" /> -->
+              <div class="picture" id="imageDiv" style = "width: 200px; height: 200px; margin-left: 130px;"></div>
+              <br>
             </div>
             <div class="modal-footer">
               <br>
@@ -168,23 +173,36 @@
     <script>        window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript">
+       function previewFile() {
+          var preview = document.querySelector('img');
+          var file    = document.querySelector('input[type=file]').files[0];
+          var reader  = new FileReader();
+
+          reader.addEventListener("load", function () {
+            preview.src = reader.result;
+          }, false);
+
+          if (file) {
+            reader.readAsDataURL(file);
+          }
+        }
 
        function check() {
+
               var title = document.getElementById('title').value;
               var ingredients = document.getElementById('ingredient').value; 
               var description = document.getElementById('description').value; 
               var difficulty = document.getElementById('difficulty').value;
               var email = document.getElementById('email').value;
               var comments = document.getElementById('comments').value;
-			  var image = document.getElementById('imgInp');
-              
+              var imageSrc = document.getElementById('image').src;
+
               
               if (title == "" || ingredient == "" || description == "" || difficulty == "" ) {
                   alert("You have to fill the fields with the *");
               } else {
-                  //document.getElementById('form').submit();
-                  //alert("Form Submitted Successfully...");
-                              // Get the modal
+
+                  // Get the modal
                   var modal = document.getElementById('myModal');
 
                   // Get the button that opens the modal
@@ -196,8 +214,7 @@
                   // When the user clicks on the button, open the modal
                   btn.onclick = function() {
                       modal.style.display = "block";
-                      //document.getElementById("title").value = title;
-                      //document.getElementById("ingredient").value = ingredient;
+
                       var $ul = $("#recipe");
                       $ul.empty();
 
@@ -207,6 +224,11 @@
                       var $in = $('<ol class="ingredients">'); 
                       var $mail = $('<ol class="email">');
                       var $com = $('<ol class="comments">');
+                      var img = document.createElement("IMG");
+                      img.src = imageSrc;
+                      img.width = '200';
+                      img.height = '200';
+                      document.getElementById('imageDiv').appendChild(img);
 
                       var $name = $('<span>').html("Title : " + title + "<br>" + "<br>");
                       var $difficulty = $('<span>').html("Difficulty : " + difficulty + "<br>" + "<br>");
@@ -214,7 +236,6 @@
                       var $ingredients = $('<span>').html("Ingredients : " + "<br>" + ingredients + "<br>" + "<br>");
                       var $email = $('<span>').html("Your Email : " + "<br>" + email + "<br>" + "<br>");
                       var $comments = $('<span>').html("Comments : " + "<br>" + comments + "<br>" + "<br>");
-						
 								   
                       $title.append($name);    
                       $dif.append($difficulty);                  
@@ -247,22 +268,20 @@
 
               }
       };
+/*
+      function submit(){
+              var title = document.getElementById('title').value;
+              var ingredients = document.getElementById('ingredient').value; 
+              var description = document.getElementById('description').value; 
+              var difficulty = document.getElementById('difficulty').value;
+              var email = document.getElementById('email').value;
+              var comments = document.getElementById('comments').value;
+              var imageSrc = document.getElementById('image').src;
 
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            
-            reader.onload = function (e) {
-                $('#blah').attr('src', e.target.result);
-            }
-            
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-    
-    $("#imgInp").change(function(){
-        readURL(this);
-    });
+              localStorage.setItem('title', title);
+
+      }
+*/
 
   </script>
   </body>

@@ -321,7 +321,8 @@ font-family: Georgia, "Times New Roman", Times, serif;
 .ingredients,
 .difficulty,
 .email,
-.comments
+.comments,
+.picture
  {
     font-size: 18px;
     font-family: Verdana;
