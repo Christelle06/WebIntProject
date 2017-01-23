@@ -184,12 +184,11 @@
           <div class="row">
             <h1 style="text-align: center;"><div id="name"></div></h1>
             <br><br>
-<!--          <div class="col-sm-6 col-lg-6">
+             <div class="col-sm-3 col-lg-3">
                   <div id="recipePic">
-                  <img class="featurette-image img-responsive center-block" src="images/tian.jpg" alt="Generic placeholder image">
                   </div>
-              </div>  -->
-              <div class="col-sm-5 col-lg-5">
+              </div>  
+              <div class="col-sm-3 col-lg-3">
                 <br>
                   <h4>Ingredients</h4>
                   
@@ -201,7 +200,7 @@
                 <br>
                 <h4>Instructions</h4>
                 <br>
-                <div id='Instructions'>
+                <div class="col-sm-3 col-lg-3" id='Instructions'>
                 </div>
               </div>
           </div>
@@ -321,9 +320,15 @@
 
                         document.getElementById("name").innerHTML = recipies[0].name;
                         var ingredsRecipe = recipies[0].recipeIngredient;
-
+                        var imageSrc = recipies[0].image;
+                        console.log(imageSrc);
                         var $ul = $("#ingredient");
                           $ul.empty();
+                        var img = document.createElement("IMG");
+                        img.src = "images/" + imageSrc;
+                        img.width = '200';
+                        img.height = '200';
+                        document.getElementById('recipePic').appendChild(img);
                           
 
                           for(var r in ingredsRecipe){
