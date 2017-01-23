@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Webint project ">
+    <meta name="author" content="Estelle RAFFIN & Christelle CABASSE">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>EcoCook - Find your recipe !</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+ 
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="css/carousel.css" rel="stylesheet">
+
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhJhVpKjTFvH5AKQ_fLweX2jWjFYh6gTU&callback=initMap" async defer></script>
+    <script type="text/javascript">
+      function initMap() {
+      // Create a default location
+      var eurecom = {lat: 43.614386, lng: 7.071124999999938}
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: eurecom,
+        zoom: 8
+      });
+        
+      var marker = new google.maps.Marker({
+        position: eurecom,
+        map: map
+      });
+    }
+    </script>
+
+  </head>
+
+  <body>
+
+<!-- ================================================= NAVBAR================================================== -->
+
+    <div class="navbar-wrapper">
+      <div class="container">
+
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">EcoCook</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="find.html">Find Recipe</a></li>
+                <li><a href="add.html">Add Recipe</a></li>
+                <li><a href="recipe.html">Recipe of the Month</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+
+	<section class="row">
+	<div class="col-lg-12">
+        <br /> 
+        <h1 style="text-align:center;"> Find out all the recipes available</h1>
+        <h5 style="text-align:center;">Our team update our database regularly !</h5>
+        <br /> 
+	
+	</section>
+	
+	 <section id="all">
+		<div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+				<div class="row">
+        <div class="col-md-2"><a href="recipeCookie.html"><img src="images/cookies.jpg" alt="cookies" width="200" height="200"> <br />
+		<span>Chocolate Chip Cookies</span></a></div>
+		<div class="col-md-1"></div>
+        <div class="col-xs-4 col-sm-3 col-md-2"><a href="recipeMuffin.html"><img src="images/muffin.jpg" alt="muffin" width="200" height="200">
+		<br />
+		<span>Chocolate Muffins</span></a></div>
+		<div class="col-md-1"></div>
+        <div class="col-md-2"><a href="recipeLasagna.html"><img src="images/lasagna.jpg" alt="lasagne" width="200" height="200">
+		<br />
+		<span>Salmon Zucchini Lasagna</span></a></div>
+		<div class="col-md-1"></div>
+        <div class="col-md-2"><a href="recipeOnionring.html"><img src="images/oignonring.jpg" alt="Oignon ring" width="200" height="200"><br />
+		<br />
+		<div class="col-md-1"></div>
+		<span>Oignon Rings</a></span></a></div>
+      
+       </div>
+		<br>
+		<section class="row">
+		  <div class="col-md-2"><a href="recipe.html"><img src="images/tian.jpg" alt="Tian" width="200" height="200"><br />
+		<br />
+		<span>Provencale Gratin</span></a></div>
+		<div class="col-md-1"></div>
+		 <div class="col-md-2"><a href="recipeBurger.html"><img src="images/burger.jpg" alt="burger" width="200" height="200"><br />
+		<br />
+		<span>Bacon Burger</span></a></div>
+		<div class="col-md-1"></div>
+        <div class="col-md-2"><a href="recipeQuesadillas.html"><img src="images/quesadillas.jpg" alt="quesadillas" width="200" height="200"><br />
+		<br />
+		<span>Quesadillas Avocado Bacon</span></a></div>
+		<div class="col-md-1"></div>
+        <div class="col-md-2"><a href="recipeSushi.html"><img src="images/sushi.jpg" alt="sushi" width="200" height="200"><br />
+		<br />
+		<span>Sushi</span></a></div>
+			 </section>
+	 
+				
+              </div>
+            </div>
+          </div>
+		  </section>
+<br>
+<br>
+<br>
+      <!-- FOOTER -->
+
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2016 EURECOM, Estelle RAFFIN & Christelle CABASSE</p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
