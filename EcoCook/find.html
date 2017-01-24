@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
    <meta charset="utf-8">
@@ -173,7 +173,7 @@
 
       <br>
       <br>
-      <input type="submit" value="Search My Recipe" id="submitRecipe" style="text-align: center;"/>
+      <input type="button" value="Search My Recipe" id="submitRecipe" style="text-align: center;"/>
       </form>
       </div>
       </div>
@@ -182,32 +182,34 @@
 
       <div class="row">
         <div class="col-lg-12">
-        <h3 style="text-align: center;">Recipies that matches to your research : </h3>
+        <h3 style="text-align: center;">Recipe that matches the best to your research : </h3>
           <div class="row">
             <h1 style="text-align: center;"><div id="name"></div></h1>
             <br><br>
-             <div class="col-sm-3 col-lg-3">
+              <div class="col-sm-4 col-lg-4">
+              <br><br>
                   <div id="recipePic">
+                  <br>
                   </div>
               </div>  
               <div class="col-sm-3 col-lg-3">
-                <br>
-                  <h4>Ingredients</h4>
-                  
-                <div id='ingredients'>
+                <br>  
+                <div id='ingredients'></div>               
+                <div>
                   <ul id="ingredient">
-
                   </ul>
                 </div>
+              </div>
+              <div class="col-sm-5 col-lg-5">
                 <br>
-                <h4>Instructions</h4>
-                <br>
-                <div class="col-sm-3 col-lg-3" id='Instructions'>
-                </div>
+                   
+                  <div id='instructions'>
+                  </div>
               </div>
           </div>
         </div>
       </div>
+
 
 
       <hr class="featurette-divider">
@@ -225,12 +227,74 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>        window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script>window.jQuery || document.write('<script src="./js/vendor/jquery.min.js"><\/script>')</script>
     <script src="js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
     $(document).ready(function() {
         var ingredients = [];
+
+         //Listen to the click inside DropEvents
+        document.getElementById("submitRecipe").addEventListener("click", function(){
+
+          $.getJSON("json/recipe.json", function(json) {
+            var graph = json["@graph"];
+            var recipies = []; //Recipies for the result page mosaique
+            console.log(graph);
+            //Parcours de toute les recettes 
+            for (i = 0; i < graph.length; i++) {
+                var ingredRecipe = [];
+                var recipe = graph[i]; 
+                var check = 0;
+                var ingredient = recipe.recipeIngredient;
+
+                for(var r in ingredient){
+                    var ingred = ingredient[r];
+                    ingredRecipe.push(ingred);
+                    
+                    for (j = 0; j < ingredients.length;j++){
+                      if (ingred.includes(ingredients[j])) 
+                      {
+                          check = check + 1;                            
+                      }
+                    } 
+                }
+                if (check >= 2){
+                  //console.log(recipe);
+                  recipies.push(recipe);
+                }
+            }
+
+            document.getElementById("name").innerHTML = recipies[0].name;
+            var ingredsRecipe = recipies[0].recipeIngredient;
+            var imageSrc = recipies[0].image;
+            
+            document.getElementById("ingredients").innerHTML = "<h4>Ingredients : </h4><br>";
+
+            var $ul = $("#ingredient");
+              $ul.empty();
+              
+            var img = document.createElement("IMG");
+            img.src = "images/" + imageSrc;
+            img.width = '250';
+            img.height = '250';
+            document.getElementById('recipePic').appendChild(img);
+              
+
+              for(var r in ingredsRecipe){
+                var ingre = ingredsRecipe[r];
+                var $li = $('<li>');
+                var $name = $('<span>').text(ingre);
+                $li.append($name);
+                $ul.append($li);
+              }
+
+            document.getElementById("instructions").innerHTML = "<h4>Instructions : </h4><br>" + recipies[0].recipeInstructions; 
+
+           });
+        });
+
+
         var dndHandler = {
 
             draggedElement: null, // Propriété pointant vers l'élément en cours de déplacement
@@ -263,6 +327,9 @@
 
                 var dndHandler = this; // Cette variable est nécessaire pour que l'événement « drop » ci-dessous accède facilement au namespace « dndHandler »
 
+
+                   
+
                 dropper.addEventListener('drop', function(e) {
 
                     var target = e.target,
@@ -288,66 +355,6 @@
                     ingredients.push(name);
                     //alert(ingredients);
 
-                    //Listen to the click inside DropEvents
-                    document.getElementById("submitRecipe").addEventListener("click", function(){
-                      alert(ingredients);
-
-                      $.getJSON("json/recipe.json", function(json) {
-                        var graph = json["@graph"];
-                        var recipies = []; //Recipies for the result page mosaique
-
-                        //Parcours de toute les recettes 
-                        for (i = 0; i < graph.length; i++) {
-                            var ingredRecipe = [];
-                            var recipe = graph[i]; 
-                            var check = 0;
-                            var ingredient = recipe.recipeIngredient;
-
-                            for(var r in ingredient){
-                                var ingred = ingredient[r];
-                                ingredRecipe.push(ingred);
-                                
-                                for (j = 0; j < ingredients.length;j++){
-                                  if (ingred.includes(ingredients[j])) 
-                                  {
-                                      check = check + 1;                            
-                                  }
-                                } 
-                            }
-                            if (check >= 2){
-                              //console.log(recipe);
-                              recipies.push(recipe);
-                            }
-                        }
-
-                        document.getElementById("name").innerHTML = recipies[0].name;
-                        var ingredsRecipe = recipies[0].recipeIngredient;
-                        var imageSrc = recipies[0].image;
-                        console.log(imageSrc);
-                        var $ul = $("#ingredient");
-                          $ul.empty();
-                        var img = document.createElement("IMG");
-                        img.src = "images/" + imageSrc;
-                        img.width = '200';
-                        img.height = '200';
-                        document.getElementById('recipePic').appendChild(img);
-                          
-
-                          for(var r in ingredsRecipe){
-                            var ingre = ingredsRecipe[r];
-                            var $li = $('<li>');
-                            var $name = $('<span>').text(ingre);
-                            $li.append($name);
-                            $ul.append($li);
-                          }
-
-                        document.getElementById("Instructions").innerHTML = recipies[0].recipeInstructions; 
-
-                       //console.log(recipies[0].name); // this will show the info it in firebug console
-                       });
-
-
-                    });
                 });
             }
         };
@@ -366,7 +373,7 @@
         }
 
 
-		})();
+		});
 
 	</script>
 

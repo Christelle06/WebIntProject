@@ -29,24 +29,6 @@
     <!-- Custom styles for this template -->
     <link href="css/carousel.css" rel="stylesheet">
 
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhJhVpKjTFvH5AKQ_fLweX2jWjFYh6gTU&callback=initMap" async defer></script>
-    <script type="text/javascript">
-      function initMap() {
-      // Create a default location
-      var eurecom = {lat: 43.614386, lng: 7.071124999999938}
-      var map = new google.maps.Map(document.getElementById('map'), {
-        center: eurecom,
-        zoom: 8
-      });
-        
-      var marker = new google.maps.Marker({
-        position: eurecom,
-        map: map
-      });
-    }
-    </script>
-
   </head>
 
   <body>
@@ -65,14 +47,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">EcoCook</a>
+              <a class="navbar-brand" href="index.html">EcoCook</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav navbar-right">
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="find.html">Find Recipe</a></li>
                 <li><a href="add.html">Add Recipe</a></li>
-				<li><a href="all.html">All Recipes</a></li>
+				        <li><a href="all.html">All Recipes</a></li>
                 <li><a href="recipe.html">Recipe of the Month</a></li>
               </ul>
             </div>
@@ -88,31 +70,33 @@
         <h1 style="text-align:center;"> Find out all the recipes available</h1>
         <h5 style="text-align:center;">Our team update our database regularly !</h5>
         <br /> 
-	
+  </div>
 	</section>
 	
 	 <section id="all">
 		<div class="container">
-            <div class="row">
-              <div class="col-lg-12">
-				<div class="row">
-        <div class="col-md-2"><a href="recipeCookie.html"><img src="images/cookies.jpg" alt="cookies" width="200" height="200"> <br />
-		<span>Chocolate Chip Cookies</span></a></div>
-		<div class="col-md-1"></div>
-        <div class="col-xs-4 col-sm-3 col-md-2"><a href="recipeMuffin.html"><img src="images/muffin.jpg" alt="muffin" width="200" height="200">
-		<br />
-		<span>Chocolate Muffins</span></a></div>
-		<div class="col-md-1"></div>
-        <div class="col-md-2"><a href="recipeLasagna.html"><img src="images/lasagna.jpg" alt="lasagne" width="200" height="200">
-		<br />
-		<span>Salmon Zucchini Lasagna</span></a></div>
-		<div class="col-md-1"></div>
-        <div class="col-md-2"><a href="recipeOnionring.html"><img src="images/oignonring.jpg" alt="Oignon ring" width="200" height="200"><br />
-		<br />
-		<div class="col-md-1"></div>
-		<span>Oignon Rings</a></span></a></div>
-      
-       </div>
+      <div class="row">
+        <div class="col-lg-12">
+				  <div class="row">
+            <div class="col-md-2"><a href="recipeCookie.html"><img src="images/cookies.jpg" alt="cookies" width="200" height="200"> <br />
+		            <span>Chocolate Chip Cookies</span></a>
+            </div>
+		        <div class="col-md-1"></div>
+            <div class="col-xs-4 col-sm-3 col-md-2"><a href="recipeMuffin.html"><img src="images/muffin.jpg" alt="muffin" width="200" height="200">
+		          <br />
+		          <span>Chocolate Muffins</span></a>
+            </div>
+		        <div class="col-md-1"></div>
+            <div class="col-md-2"><a href="recipeLasagna.html"><img src="images/lasagna.jpg" alt="lasagne" width="200" height="200">
+		          <br />
+		          <span>Salmon Zucchini Lasagna</span></a>
+            </div>
+		        <div class="col-md-1"></div>
+            <div class="col-md-2"><a href="recipeOnionring.html"><img src="images/oignonring.jpg" alt="Oignon ring" width="200" height="200"><br />
+		          <br />
+            <span>Oignon Rings</a></span></a></div>
+		        <div class="col-md-1"></div>
+          </div>
 		<br>
 		<section class="row">
 		  <div class="col-md-2"><a href="recipe.html"><img src="images/tian.jpg" alt="Tian" width="200" height="200"><br />
@@ -140,8 +124,9 @@
 <br>
 <br>
 <br>
-      <!-- FOOTER -->
+      <hr class="featurette-divider">
 
+      <!-- FOOTER -->
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
         <p>&copy; 2016 EURECOM, Estelle RAFFIN & Christelle CABASSE</p>
