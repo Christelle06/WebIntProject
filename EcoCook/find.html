@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿OCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
    <meta charset="utf-8">
@@ -182,31 +182,46 @@
 
       <div class="row">
         <div class="col-lg-12">
-        <h3 style="text-align: center;">Recipe that matches the best to your research : </h3>
+        <h3 style="text-align: center;">Recipes that matches the best to your research : </h3>
           <div class="row">
-            <h1 style="text-align: center;"><div id="name"></div></h1>
+            <h1 style="text-align: center;"><div id="name1"></div></h1>
             <br><br>
               <div class="col-sm-4 col-lg-4">
               <br><br>
-                  <div id="recipePic">
-                  <br>
-                  </div>
+                  <div id="recipePic1"><br></div>
               </div>  
               <div class="col-sm-3 col-lg-3">
                 <br>  
-                <div id='ingredients'></div>               
+                <div id='ingredients1'></div>               
                 <div>
-                  <ul id="ingredient">
-                  </ul>
+                  <ul id="ingredient1"></ul>
                 </div>
               </div>
               <div class="col-sm-5 col-lg-5">
                 <br>
-                   
-                  <div id='instructions'>
-                  </div>
+				  <div id='instructions1'></div>
               </div>
           </div>
+          <div class="row">
+            <h1 style="text-align: center;"><div id="name2"></div></h1>
+            <br><br>
+              <div class="col-sm-4 col-lg-4">
+              <br><br>
+                  <div id="recipePic2"><br></div>
+              </div>  
+              <div class="col-sm-3 col-lg-3">
+                <br>  
+                <div id='ingredients2'></div>               
+                <div>
+                  <ul id="ingredient2"></ul>
+                </div>
+              </div>
+              <div class="col-sm-5 col-lg-5">
+                <br>
+				  <div id='instructions2'></div>
+              </div>
+          </div>
+
         </div>
       </div>
 
@@ -265,32 +280,51 @@
                 }
             }
 
-            document.getElementById("name").innerHTML = recipies[0].name;
-            var ingredsRecipe = recipies[0].recipeIngredient;
-            var imageSrc = recipies[0].image;
+            document.getElementById("name1").innerHTML = recipies[0].name;
+            document.getElementById("name2").innerHTML = recipies[1].name;
+
+            var ingredsRecipe1 = recipies[0].recipeIngredient;
+            var ingredsRecipe2 = recipies[1].recipeIngredient;
+            var imageSrc1 = recipies[0].image;
+            var imageSrc2 = recipies[1].image;
             
-            document.getElementById("ingredients").innerHTML = "<h4>Ingredients : </h4><br>";
+            document.getElementById("ingredients1").innerHTML = "<h4>Ingredients : </h4><br>";
+            document.getElementById("ingredients2").innerHTML = "<h4>Ingredients : </h4><br>";
 
-            var $ul = $("#ingredient");
-              $ul.empty();
+            var $ul1 = $("#ingredient1");
+              $ul1.empty();
+            var $ul2 = $("#ingredient2");
+              $ul2.empty();
               
-            var img = document.createElement("IMG");
-            img.src = "images/" + imageSrc;
-            img.width = '250';
-            img.height = '250';
-            document.getElementById('recipePic').appendChild(img);
-              
+            var img1 = document.createElement("IMG");
+            img1.src = "images/" + imageSrc1;
+            img1.width = '250';
+            img1.height = '250';
+            document.getElementById('recipePic1').appendChild(img1);
+ 
+            var img2 = document.createElement("IMG");
+            img2.src = "images/" + imageSrc2;
+            img2.width = '250';
+            img2.height = '250';
+            document.getElementById('recipePic2').appendChild(img2);             
 
-              for(var r in ingredsRecipe){
-                var ingre = ingredsRecipe[r];
-                var $li = $('<li>');
-                var $name = $('<span>').text(ingre);
-                $li.append($name);
-                $ul.append($li);
+              for(var r in ingredsRecipe1){
+                var ingre1 = ingredsRecipe1[r];
+                var $li1 = $('<li>');
+                var $name1 = $('<span>').text(ingre1);
+                $li1.append($name1);
+                $ul1.append($li1);
               }
 
-            document.getElementById("instructions").innerHTML = "<h4>Instructions : </h4><br>" + recipies[0].recipeInstructions; 
-
+              for(var r in ingredsRecipe2){
+                var ingre2 = ingredsRecipe2[r];
+                var $li2 = $('<li>');
+                var $name2 = $('<span>').text(ingre2);
+                $li2.append($name2);
+                $ul2.append($li2);
+              }
+            document.getElementById("instructions1").innerHTML = "<h4>Instructions : </h4><br>" + recipies[0].recipeInstructions; 
+            document.getElementById("instructions2").innerHTML = "<h4>Instructions : </h4><br>" + recipies[1].recipeInstructions;
            });
         });
 
